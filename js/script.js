@@ -13,3 +13,9 @@ pizzaJson.map( (item, index)=>{
 
     s('.pizza-area').append(pizzaItem)
 });
+
+pizzaJson.map((primeiro, segundo, terceiro)=>{
+    console.log(primeiro); // vem o objeto
+    console.log(segundo); // vem a posição do array
+    console.log(terceiro); // vem todo o array
+})
