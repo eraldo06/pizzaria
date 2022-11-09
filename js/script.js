@@ -11,11 +11,15 @@ pizzaJson.map( (item, index)=>{
     pizzaItem.querySelector('.pizza-item--desc').innerHTML = item.description;
     pizzaItem.querySelector('.pizza-item--price').innerHTML = `R$ ${item.price.toFixed(2)}`;
 
+    pizzaItem.querySelector('a').addEventListener('click', (e)=>{
+        e.preventDefault();
+
+        s('.pizzaWindowArea').style.opacity = 0;
+        s('.pizzaWindowArea').style.display = 'flex';
+        setTimeout(()=>{
+            s('.pizzaWindowArea').style.opacity = 1;
+        },200);
+    })
+
     s('.pizza-area').append(pizzaItem)
 });
-
-pizzaJson.map((primeiro, segundo, terceiro)=>{
-    console.log(primeiro); // vem o objeto
-    console.log(segundo); // vem a posição do array
-    console.log(terceiro); // vem todo o array
-})
