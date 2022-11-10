@@ -20,6 +20,7 @@ pizzaJson.map((item, index)=>{
         s('.pizzaBig img').src = pizzaJson[key].img;
        s('.pizzaInfo h1').innerHTML = pizzaJson[key].name;
        s('.pizzaInfo--desc').innerHTML = pizzaJson[key].description;
+       s('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[key].price.toFixed(2)}`;
 
 
         s('.pizzaWindowArea').style.opacity = 0;
