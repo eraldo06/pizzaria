@@ -2,6 +2,7 @@ const s = (el)=>document.querySelector(el);
 const sa = (el)=>document.querySelectorAll(el);
 let modalQt = 1;
 
+// LISTAGEM DAS PIZZAS
 pizzaJson.map((item, index)=>{
    
     // clonado uma base html
@@ -34,8 +35,19 @@ pizzaJson.map((item, index)=>{
         s('.pizzaWindowArea').style.display = 'flex';
         setTimeout(()=>{
             s('.pizzaWindowArea').style.opacity = 1;
-        },200);
+        },100);
     })
    
     s('.pizza-area').append(pizzaItem)
 });
+
+// EVENTOS DO MODAL
+function closeModal(){
+    s('.pizzaWindowArea').style.opacity = 0;
+    setTimeout(()=>{
+        s('.pizzaWindowArea').style.display = 'none';
+    },100)
+}
+sa('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach((item)=>{
+    item.addEventListener('click', closeModal);
+})
