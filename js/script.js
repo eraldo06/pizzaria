@@ -51,3 +51,13 @@ function closeModal(){
 sa('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach((item)=>{
     item.addEventListener('click', closeModal);
 })
+s('.pizzaInfo--qtmenos').addEventListener('click',()=>{
+    if(modalQt > 1){
+        modalQt--;
+        s('.pizzaInfo--qt').innerHTML = modalQt;
+    }
+})
+s('.pizzaInfo--qtmais').addEventListener('click',()=>{
+    modalQt++;
+    s('.pizzaInfo--qt').innerHTML = modalQt;
+})
