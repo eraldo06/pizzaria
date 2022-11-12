@@ -74,7 +74,7 @@ sa('.pizzaInfo--size').forEach((size, sizeIndex)=>{
 
 // ADICIONANDO NO CARRINHO
 s('.pizzaInfo--addButton').addEventListener('click', ()=>{
-    let size = s('.pizzaInfo--size.selected').getAttribute('data-key')
+    let size = parseInt(s('.pizzaInfo--size.selected').getAttribute('data-key'))
 
     cart.push({
         id:pizzaJson[modalKey].id,
