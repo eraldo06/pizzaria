@@ -89,5 +89,17 @@ s('.pizzaInfo--addButton').addEventListener('click', ()=>{
             qt:modalQt,
         })
     }
+    updateCart()
     closeModal()
 })
+
+function updateCart(){
+    if(cart.length >0){
+        s('aside').classList.add('show');
+        for(let i in cart){
+            let pizzaItem = pizzaJson.find((item)=>item.id==cart[i].id)
+        }
+    }else{
+        s('aside').classList.remove('show');
+    }
+}
