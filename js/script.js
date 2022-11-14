@@ -93,7 +93,20 @@ s('.pizzaInfo--addButton').addEventListener('click', ()=>{
     closeModal()
 })
 
+// abrir carrinho mobile
+s('.menu-openner span').addEventListener('click',()=>{
+    s('aside').style.left = '0'
+})
+
+// fechar carrinho mobile
+s('.menu-closer').addEventListener('click',()=>{
+    s('aside').style.left =   ' 100vw'
+})
+
+// atualizção dos dados do carrinho
 function updateCart(){
+    s('.menu-openner span').innerHTML = cart.length;
+
     if(cart.length > 0){
         s('aside').classList.add('show');
         s('.cart').innerHTML = ''
@@ -148,7 +161,9 @@ function updateCart(){
         s('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`
 
     }else{
+        // fechando carrinho depois da execução
         s('aside').classList.remove('show');
+        s('aside').style.left='100vw';
     }
 }
 
